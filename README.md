@@ -8,7 +8,7 @@ the wonders of 6 am salty coding...
 
 Mac only (sorry PC users)...
 
-1. Download this project (see the Git clone on the righthand corner or in Terminal run `git clone git remote add origin https://github.com/chenboy3/uniqlo_alarm.git`)
+1. Download this project (see the Git clone on the righthand corner or in Terminal run `git clone https://github.com/chenboy3/uniqlo_alarm.git`)
 2. Make sure you have Python3 installed (run `python3 -- version` and see what version Python you have)
 3. Leave your computer plugged in, make sure it won't go to sleep (turn off the display if you have to), max volume (or however loud you need it to wake you up in the middle of the night)
 4. Open Terminal, navigate to this folder.
@@ -41,3 +41,15 @@ Line 65:
 > time.sleep(MIN)
 
 Change the value within `time.sleep` to however often you want to query the endpoint (be careful not to do it too often for rate limiting), the value is in seconds.
+
+### Querying other backends/doing it manually
+
+You can figure out the backend URL for a specific shirt by the following steps:
+
+1. Go to the page for a specific shirt (e.g. https://www.uniqlo.com/us/en/manga-ut-demon-slayer-short-sleeve-graphic-t-shirt-434410.html?dwvar_434410_color=COL00&cgid=ut-graphic-tees-manga-demon-slayer#start=1&cgid=ut-graphic-tees-manga-demon-slayer).
+2. Open up the developer tools (assuming you're on Chrome with `CTRL + SHIFT + C`).
+3. Go to the Network tab
+4. Click the clear button (the 🚫 symbol) to clear all previous traffic.
+5. Click on a shirt size (the one you're looking for).
+6. Look for the item that starts with `Product-GetAvailability`, right click and Open in New Tab.
+7. And voila, you'll be able to see the backend for that specific item, color, and size and the Uniqlo metadata that comes with it. 
